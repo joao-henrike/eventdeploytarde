@@ -47,9 +47,8 @@ const EventosAlunoPage = () => {
     if (tipoEvento === "1") {
       //todos os eventos (Evento)
       try {
-        const todosEventos = await api.get(eventsResource);
-        const meusEventos = await api.get(
-          `${myEventsResource}/${userData.userId}`
+        const todosEventos = await api.get("/Evento");
+        const meusEventos = await api.get(`/PresencasEvento/ListarMinhas/${userData.userId}`
         );
 
         const eventosMarcados = verificaPresenca(
